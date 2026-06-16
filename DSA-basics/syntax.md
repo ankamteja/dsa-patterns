@@ -29,7 +29,6 @@ cin >> a >> b;
 
 ## If-else
 ```cpp
-// 0 = false, anything else = true
 if (a > 10) {
     cout << "hello";
 } else if (a > 5) {
@@ -38,33 +37,20 @@ if (a > 10) {
 if (a % 3 == 0 || a % 2 == 0) {}
 ```
 
-## Loops
-
 ## For Loop
 ```cpp
 for (int i = 0; i < 5; i++) {
     cout << "hello" << endl;
 }
 ```
+
 ## While Loop
 ```cpp
-// basic
-while (condition) {
-    // code
-}
+while (condition) { }
 
-// infinite loop
 while (true) {
-    if (someCondition) break;    // exit loop
-    if (otherCondition) continue; // skip to next iteration
-}
-
-// example
-int i = 0;
-while (i < 5) {
-    if (i == 3) { i++; continue; } // skip 3
-    cout << i << endl;
-    i++;
+    if (someCondition) break;
+    if (otherCondition) continue;
 }
 ```
 
@@ -75,7 +61,76 @@ int func(int n) {
 }
 
 int main() {
-    int m = 10;
-    cout << func(m) << endl;
+    cout << func(10) << endl;
+}
+```
+
+## Arrays
+
+### Static Array
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+int arr[5];          // uninitialized
+arr[0] = 10;         // access/set by index
+
+// iterate
+for (int i = 0; i < 5; i++) {
+    cout << arr[i] << endl;
+}
+```
+
+### Vector (dynamic array — use this for DSA)
+```cpp
+#include <bits/stdc++.h>
+
+vector<int> v = {1, 2, 3};
+v.push_back(4);       // add to end
+v.pop_back();         // remove from end
+v.size();             // length
+v[0];                 // access by index
+
+// iterate
+for (int x : v) {
+    cout << x << endl;
+}
+```
+
+## Linked List
+
+### Manual (Node-based)
+```cpp
+struct Node {
+    int data;
+    Node* next;
+    Node(int val) {
+        data = val;
+        next = nullptr;
+    }
+};
+
+// create nodes
+Node* head = new Node(1);
+head->next = new Node(2);
+head->next->next = new Node(3);
+// 1 → 2 → 3 → null
+
+// traverse
+Node* temp = head;
+while (temp != nullptr) {
+    cout << temp->data << endl;
+    temp = temp->next;
+}
+```
+
+### STL List (predefined)
+```cpp
+list<int> l = {1, 2, 3};
+l.push_back(4);       // add to end
+l.push_front(0);      // add to front
+l.pop_back();
+l.pop_front();
+
+for (int x : l) {
+    cout << x << endl;
 }
 ```
