@@ -20,13 +20,13 @@ while(i<j)
 {
 int sum = a[i]+a[j]
 
-    if(sum < a[i]+a[j])
+    if(target < a[i]+a[j])
         j--
 
-    if(sum > a[i]+a[j]) 
+    if(target > a[i]+a[j]) 
         i++
 
-    if(sum = a[i]+a[j])
+    if(target = a[i]+a[j])
         return i, j;
         break;
 }
