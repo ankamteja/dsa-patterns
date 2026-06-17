@@ -4,6 +4,8 @@ Consider the number of unique elements in nums to be k​​​​​​​​�
 
 The first k elements of nums should contain the unique numbers in sorted order. The remaining elements beyond index k - 1 can be ignored.*/
 
+//Time Complexity: O(n)
+//Space Complexity: O(1)
 
 #include <bits/stdc++.h>
 using namespace std;
